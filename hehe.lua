@@ -289,3 +289,54 @@ bb22.Position = bb11.Position
 bb22.BackgroundColor3 = Color3.new(1, 0, 0)
 bb22.Text = ""
 fff.ClipsDescendants = true
+local shal = {Size = UDim2.new(1,0,0.10)}
+local unshal = {Size = UDim2.new(1,0,0.15)}
+local hall1 = {Position = UDim2.new(0,0,0.055)}
+local unhall1 = {Position = UDim2.new(0,0,0.025)}
+local hall2 = {Position = UDim2.new(0,0,0.225)}
+local unhall2 = {Position = UDim2.new(0,0,0.2)}
+local hall3 = {Position = UDim2.new(0,0,0.4)}
+local unhall3 = {Position = UDim2.new(0,0,0.375)}
+local slime1 = tw:Create(p1,ifo2,shal)
+local unslime1 = tw:Create(p1,ifo2,unshal)
+local slime2 = tw:Create(p2,ifo2,shal)
+local unslime2 = tw:Create(p2,ifo2,unshal)
+local slime3 = tw:Create(p3,ifo2,shal)
+local unslime3 = tw:Create(p3,ifo2,unshal)
+local oi1 = tw:Create(p1,ifo2,hall1)
+local unoi1 = tw:Create(p1,ifo2,unhall1)
+local oi2 = tw:Create(p2,ifo2,hall2)
+local unoi2 = tw:Create(p2,ifo2,unhall2)
+local oi3 = tw:Create(p3,ifo2,hall3)
+local unoi3 = tw:Create(p3,ifo2,unhall3)
+
+p1.MouseButton1Down:Connect(function()
+slime1:Play()
+end)
+p1.MouseButton1Up:Connect(function()
+unoi1:Play()
+unslime1:Play()
+end)
+p2.MouseButton1Down:Connect(function()
+oi1:Play()
+oi2:Play()
+slime2:Play()
+end)
+p2.MouseButton1Up:Connect(function()
+unoi1:Play()
+unoi2:Play()
+unslime2:Play()
+end)
+p3.MouseButton1Down:Connect(function()
+oi1:Play()
+oi3:Play()
+oi2:Play()
+slime3:Play()
+end)
+p3.MouseButton1Up:Connect(function()
+unoi1:Play()
+unoi3:Play()
+unoi2:Play()
+unslime3:Play()
+end)
+ff.ClipsDescendants = true
